@@ -14,7 +14,7 @@ export default function TestSupabase() {
         if (authError) throw authError
         
         // Test 2 : lecture des tarifs (table publique)
-        const {  pricing, error: pricingError } = await supabase
+        const { data: pricing, error: pricingError } = await supabase
           .from('pricing_rules')
           .select('*')
         
